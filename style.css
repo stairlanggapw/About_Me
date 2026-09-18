@@ -1,0 +1,352 @@
+/* VARIABEL WARNA BERDASARKAN PALET */
+:root {
+    --bg-main: #0B0E1B;        /* Darkest Navy */
+    --card-bg: #181B39;        /* Deep Indigo / Navy Card */
+    --accent-blue: #4E588E;     /* Muted Indigo/Blue */
+    --accent-light: #9698C3;    /* Light Purple/Lavender Accent */
+    --text-primary: #F0F2F9;    /* Bright text for readability */
+    --text-secondary: #B0B5D3;  /* Muted text for descriptions */
+    --border-color: rgba(150, 152, 195, 0.15);
+}
+
+/* RESET BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* offset untuk navbar sticky */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding-bottom: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 14, 27, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-logo span {
+    color: var(--accent-light);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-light);
+}
+
+/* HEADER & PROFILE AVATAR */
+header {
+    background: linear-gradient(180deg, rgba(24, 27, 57, 0.8) 0%, var(--bg-main) 100%);
+    padding: 50px 20px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-blue));
+    box-shadow: 0 0 25px rgba(150, 152, 195, 0.25);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+}
+
+.tag {
+    background: rgba(150, 152, 195, 0.15);
+    color: var(--accent-light);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 12px 0 8px;
+    color: var(--text-primary);
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(150, 152, 195, 0.35);
+}
+
+.card h2 {
+    color: var(--accent-light);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-blue);
+    display: inline-block;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* BIODATA TABLE */
+.biodata-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.biodata-table td {
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(150, 152, 195, 0.08);
+}
+
+.biodata-table tr:last-child td {
+    border-bottom: none;
+}
+
+.biodata-table td:first-child {
+    font-weight: 600;
+    color: var(--accent-light);
+    width: 35%;
+}
+
+.biodata-table td:last-child {
+    color: var(--text-secondary);
+}
+
+/* CUSTOM LIST */
+ul.custom-list {
+    list-style: none;
+}
+
+ul.custom-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+ul.custom-list li::before {
+    content: "◈";
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+    font-size: 0.9rem;
+}
+
+/* TIMELINE ITEM */
+.timeline-item {
+    margin-bottom: 16px;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent-blue);
+}
+
+.timeline-item h3 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.timeline-item p {
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 10px;
+    background: rgba(11, 14, 27, 0.8);
+    backdrop-filter: blur(4px);
+    color: var(--accent-light);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+/* Efek Hover */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* BADGES */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background: rgba(150, 152, 195, 0.12);
+    color: var(--accent-light);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* PORTOFOLIO GRID */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: rgba(11, 14, 27, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.portfolio-item h3 {
+    color: var(--accent-light);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.portfolio-item p {
+    font-size: 0.88rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 20px 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVE DESIGN (MOBILE) */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+}
